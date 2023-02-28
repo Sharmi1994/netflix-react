@@ -3,18 +3,18 @@ import React from "react";
 function Emailaddress() {
   return (
     <div>
-      <h2 class="subsentence">
+      <h2 className="subsentence">
         Ready to watch? Enter your email to create or restart your membership.
       </h2>
-      <div class="input-group mb-3">
+      <div className="input-group mb-3">
         <input
           type="text"
-          class="form-control"
+          className="form-control"
           placeholder="Email address"
           aria-label="Username"
           aria-describedby="basic-addon1"
-        /><button type="button" class="btn btn-lg btn-danger">
-        Get Started
+        /><button type="button" className="btn btn-lg btn-danger">
+        Get Started {">"}
       </button>
       </div>
       

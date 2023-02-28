@@ -5,22 +5,22 @@ import Emailaddress from "./Emailaddress";
 function Navbar() {
   return (
     <React.Fragment>
-    <div class= "title">
-      <nav class="navbar">
-        <div class="navbar-brand">NetFlix</div>
+    <div className= "title">
+      <nav className="navbar">
+        <div className="navbar-brand">NetFlix</div>
         <div>
-          <select class="language">
+          <select className="language">
             <option>English</option>
             <option>Spanish</option>
           </select>
-          <button type="button" class="btn btn-danger">
+          <button type="button" className="btn btn-danger">
             Signin
           </button>
         </div>
       </nav>
-      <div class="container">
-        <h1 class="subtitle">Unlimited movies, TV shows, and more.</h1>
-        <h2 class="subsentence1">Watch anywhere. Cancel anytime..</h2>
+      <div className="container customisedcontain">
+        <h1 className="subtitle">Unlimited movies, TV shows, and more.</h1>
+        <h2 className="subsentence1">Watch anywhere. Cancel anytime..</h2>
        <Emailaddress/>
       
       </div>
