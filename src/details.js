@@ -5,6 +5,7 @@ const details = [
     imgURL: "/images/netflix gif.gif",
 
     imagePosition: "right",
+    Additional:"none",
 
     Desc: "Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.",
   },
@@ -14,6 +15,7 @@ const details = [
     imgURL:
       "https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg",
       imagePosition: "left",
+      Additional:"grid",
 
     Desc: "Save your favorites easily and always have something to watch.",
   },
@@ -23,7 +25,7 @@ const details = [
     imgURL:
       "https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png",
       imagePosition: "right",
-
+      Additional:"none",
     Desc: "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.",
   },
 
@@ -31,6 +33,7 @@ const details = [
     id: 4,
     Topic: "Create profiles for kids.",
     imagePosition: "left",
+    Additional:"none",
     imgURL:
       "https://occ-0-1183-3934.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABfpnX3dbgjZ-Je8Ax3xn0kXehZm_5L6-xe6YSTq_ucht9TI5jwDMqusWZKNYT8DfGudD0_wWVVTFLiN2_kaQJumz2iivUWbIbAtF.png?r=11f",
 

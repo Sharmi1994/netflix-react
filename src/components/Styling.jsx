@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 
 function Styling(props) {
   return (
-    <div>
+    <div className=" netflixknowledge">
       {props.position === "right" ? (
         <Container>
           <div className="row describerow">
@@ -31,6 +31,7 @@ function Styling(props) {
           </div>
         </Container>
       )}
+      <hr/>
     </div>
   );
 }

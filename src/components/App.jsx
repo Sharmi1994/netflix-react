@@ -6,6 +6,8 @@ import Styling from "./Styling";
 
 import details from "../details";
 
+import Grid from "./grid";
+
 function detailsImport(detail) {
   return (
     <Styling
@@ -14,6 +16,7 @@ function detailsImport(detail) {
       image={detail.imgURL}
       position={detail.imagePosition}
       description={detail.Desc}
+      Additionalgrid={detail.Additional}
     />
   );
 }
@@ -22,7 +25,9 @@ function App() {
   return (
     <div>
       <Navbar />
+   
       {details.map(detailsImport)}
+  <Grid />
     </div>
   );
 }

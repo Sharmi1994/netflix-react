@@ -1,3 +1,6 @@
+body{
+  background-color: black;
+}
 h1{
   font-size: 3.125rem;
 }
@@ -61,11 +64,32 @@ hr{
 .describecol{
 text-align: center;
 font-size: 1.25rem;
+margin: 50px auto;
 }
 .describerow{
   height: 400px;
 }
+.netflixknowledge{
+margin: 100px auto;
+color:white
 
+}
+
+.Strange{
+  color:white;
+  font-size: small;
+}
+.download{
+  color:blue;
+  font-size: small;
+}
+
+
+.diagonalbox{
+  width: 300px;
+  border-style: solid;
+  border-radius: 9px;
+}
 
 @media only screen and (max-width: 750px) {
  h1{
@@ -79,6 +103,11 @@ h2{
 }
 .input-group>.form-control{
     margin-left: 100px;
+}
+
+.describerow{
+  height: 600px;
+  text-align:center;
 }
 }
 
