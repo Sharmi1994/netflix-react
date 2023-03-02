@@ -2,9 +2,9 @@ import React from "react";
 
 function Grid() {
   return (
-    <div class="container">
-    <div class="row diagonalbox">
-      <div class="col-3">
+    <div className="container ">
+    <div className="row diagonalbox">
+      <div className="col-3">
         <img
           src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png"
           alt="img.png"
@@ -12,12 +12,12 @@ function Grid() {
           height="60"
         />
       </div>
-      <div class="col-6">
-        <p class="Strange">Stranger Things</p>
+      <div className="col-6">
+        <p className="Strange">Stranger Things</p>
 
-        <p class="download">Downloading...</p>
+        <p className="download">Downloading...</p>
       </div>
-      <div class="col-3">
+      <div className="col-3">
         <img
           src="/images/download-icon-gif-3.jpeg"
           alt="img.png"

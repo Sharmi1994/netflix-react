@@ -6,7 +6,10 @@ import Styling from "./Styling";
 
 import details from "../details";
 
-import Grid from "./grid";
+import Frequentques from "./Frequentques";
+
+import Faq from "../FAQ";
+
 
 function detailsImport(detail) {
   return (
@@ -21,13 +24,27 @@ function detailsImport(detail) {
   );
 }
 
+function freqquesdetail(freqques) {
+    return(
+        <Frequentques
+        key={freqques.id}
+        title={freqques.Topic} 
+        desc1={freqques.Desc1}
+        desc2={freqques.Desc2}
+      
+        />
+    )
+}
+
 function App() {
   return (
     <div>
       <Navbar />
-   
+
       {details.map(detailsImport)}
-  <Grid />
+
+      <h1 className="FAQ">Frequently Asked Questions</h1>
+      {Faq.map(freqquesdetail)}
     </div>
   );
 }

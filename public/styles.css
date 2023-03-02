@@ -68,6 +68,7 @@ margin: 50px auto;
 }
 .describerow{
   height: 400px;
+  
 }
 .netflixknowledge{
 margin: 100px auto;
@@ -86,9 +87,47 @@ color:white
 
 
 .diagonalbox{
-  width: 300px;
+  width: 325px;
   border-style: solid;
+  border-color: #737373;
   border-radius: 9px;
+  margin-top: 300px;
+  margin-left: 60px;
+  background-color: black;
+}
+
+.backimage{
+  background-image: url( "https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg");
+  background-position-y: center;
+  background-position-x: right;
+}
+
+.myDiv{
+  height: 60px;
+  width: 5in;
+  background-color: #303030;
+  color:white;
+  margin: 5px 5px 1px 250px; 
+  border: 0;
+  font-weight: 400;
+  margin-bottom: 1px;
+  padding: 0.8em 2.2em 0.8em 1.2em;
+  position: relative;
+}
+
+.FAQ{
+  text-align: center;
+  color:white;
+}
+.fontawesome{
+  float: right;
+}
+.expand{
+   width: 5in;
+   background-color: #303030;
+   color:white;
+padding:5px;
+margin: 5px 5px 1px 250px; 
 }
 
 @media only screen and (max-width: 750px) {
@@ -114,5 +153,16 @@ h2{
 @media only screen and (max-width: 997px) {
   h1.subtitle{
     padding: 25px 50px;
+  }
+.myDiv{
+  margin: 5px 5px 1px 10px;
+}
+.expand{
+  margin: 5px 5px 1px 10px;
+}
+  .diagonalbox{
+    
+    margin-left: 0px;
+  
   }
 }
