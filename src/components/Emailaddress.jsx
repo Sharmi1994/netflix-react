@@ -17,7 +17,6 @@ function Emailaddress() {
         Get Started {">"}
       </button>
       </div>
-      
     </div>
   );
 }

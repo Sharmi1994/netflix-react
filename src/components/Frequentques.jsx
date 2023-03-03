@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 
 function Frequentques(props) {
@@ -9,6 +11,7 @@ function Frequentques(props) {
   }
 
   return (
+
     <div className="container">
       <div onClick={expandable} className="myDiv">
         {props.title}
@@ -28,7 +31,9 @@ function Frequentques(props) {
           </span>
         </div>
       )}
+      
     </div>
+  
   );
 }
 

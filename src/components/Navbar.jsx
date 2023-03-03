@@ -2,6 +2,8 @@ import React from "react";
 
 import Emailaddress from "./Emailaddress";
 
+import Language from "./language";
+
 function Navbar() {
   return (
     <React.Fragment>
@@ -9,10 +11,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-brand">NetFlix</div>
         <div>
-          <select className="language">
-            <option>English</option>
-            <option>Spanish</option>
-          </select>
+       <Language />
           <button type="button" className="btn btn-danger">
             Signin
           </button>

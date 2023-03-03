@@ -9,6 +9,8 @@ h2{
 }
 .subsentence{
   font-size: 1.2rem;
+  color:white;
+  text-align: center;
 }
 h1.subtitle{
   padding: 25px 250px;
@@ -21,7 +23,7 @@ h1.subtitle{
 .input-group>.form-control{
     flex: 0.5 1 auto;
 	    width: 1%;
-	    margin-left: 300px;
+	    margin-left: 400px;
 }
 .navbar-brand{
 
@@ -34,9 +36,9 @@ h1.subtitle{
   display: inline-block;
   block-size: 35px;
   margin-right: 7px;
-  background-color: #737373;
-  color:white;
-  border-color: whitesmoke;
+  background-color: black;
+  color:#8c8c8c;
+  border-color: #8c8c8c;
 }
 hr{
   border-top: 8px solid rgb(52, 51, 51);
@@ -107,7 +109,7 @@ color:white
   width: 5in;
   background-color: #303030;
   color:white;
-  margin: 5px 5px 1px 250px; 
+  margin: 5px 5px 1px 300px; 
   border: 0;
   font-weight: 400;
   margin-bottom: 1px;
@@ -127,7 +129,28 @@ color:white
    background-color: #303030;
    color:white;
 padding:5px;
-margin: 5px 5px 1px 250px; 
+margin: 5px 5px 1px 300px; 
+}
+.footer{
+  color:white;
+  display:flex;
+  color:#737373;
+}
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-top:10px;
+  padding-bottom:10px;
+  font-size: 13px;
+  margin-bottom: 5px;
+  color:#737373;
+}
+a{
+  color:#737373;
+}
+.end{
+  padding-top:5px ;
+  color:#737373;
 }
 
 @media only screen and (max-width: 750px) {

@@ -10,6 +10,9 @@ import Frequentques from "./Frequentques";
 
 import Faq from "../FAQ";
 
+import Emailaddress from "./Emailaddress";
+
+import Footer from "./footer";
 
 function detailsImport(detail) {
   return (
@@ -25,15 +28,14 @@ function detailsImport(detail) {
 }
 
 function freqquesdetail(freqques) {
-    return(
-        <Frequentques
-        key={freqques.id}
-        title={freqques.Topic} 
-        desc1={freqques.Desc1}
-        desc2={freqques.Desc2}
-      
-        />
-    )
+  return (
+    <Frequentques
+      key={freqques.id}
+      title={freqques.Topic}
+      desc1={freqques.Desc1}
+      desc2={freqques.Desc2}
+    />
+  );
 }
 
 function App() {
@@ -45,6 +47,9 @@ function App() {
 
       <h1 className="FAQ">Frequently Asked Questions</h1>
       {Faq.map(freqquesdetail)}
+      <Emailaddress />
+      <hr />
+<Footer/>
     </div>
   );
 }
