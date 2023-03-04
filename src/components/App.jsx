@@ -14,6 +14,7 @@ import Emailaddress from "./Emailaddress";
 
 import Footer from "./footer";
 
+
 function detailsImport(detail) {
   return (
     <Styling
@@ -42,14 +43,13 @@ function App() {
   return (
     <div>
       <Navbar />
-
       {details.map(detailsImport)}
-
       <h1 className="FAQ">Frequently Asked Questions</h1>
       {Faq.map(freqquesdetail)}
       <Emailaddress />
       <hr />
-<Footer/>
+     <Footer/>
+ 
     </div>
   );
 }
