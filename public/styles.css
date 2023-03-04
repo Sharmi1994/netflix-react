@@ -153,6 +153,53 @@ a{
   color:#737373;
 }
 
+.signin{
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/a43711df-c428-4f88-8bb3-b2ac5f20608f/7064cb96-688c-4ee7-99d6-707333acb433/KY-en-20230227-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+height:750px;
+}
+input{
+  background-color: #737373;
+  height:55px;
+ 
+}
+::placeholder {
+color:black;
+}
+.newto{
+  padding-top:60px;
+}
+.sun{
+  color:white;
+  font-style: bold;
+  padding-left:2px;
+}
+
+.signcontain{
+  width:550px;
+  background-color: rgba(0,0,0,.75);
+  color:#737373;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 50px;
+
+}
+.signhead{
+  color: white;
+ 
+}
+
+.email{
+  margin-top:10px ;
+  margin-bottom:10px;
+}
+.googlecap{
+  font-size: small;
+}
+.link{
+  color:blue;
+}
+
+  
 @media only screen and (max-width: 750px) {
  h1{
     font-size: 1.75rem;
