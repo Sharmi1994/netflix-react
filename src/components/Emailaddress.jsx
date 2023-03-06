@@ -1,6 +1,16 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 function Emailaddress() {
+
+  let navigate=useNavigate();
+  function routeChange(){
+
+    let path="/Signup";
+    navigate(path);
+
+  }
   return (
     <div>
       <h2 className="subsentence">
@@ -13,9 +23,10 @@ function Emailaddress() {
           placeholder="Email address"
           aria-label="Username"
           aria-describedby="basic-addon1"
-        /><button type="button" className="btn btn-lg btn-danger">
-        Get Started {">"}
-      </button>
+        />
+        <button type="button" onClick={routeChange} className="btn btn-lg btn-danger">
+          Get Started {">"}
+        </button>
       </div>
     </div>
   );

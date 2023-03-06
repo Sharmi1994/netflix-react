@@ -3,6 +3,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import App from "./components/App";
+import Signup from "./components/Signup";
+
+import mongoose from "mongoose";
 
 import {
   createBrowserRouter,
@@ -19,6 +22,7 @@ const router = createBrowserRouter(
     <Route element={<Layout />}>
       <Route path="" element={<App />} />
       <Route path="Signin" element={<Signin />} />
+      <Route path="Signup" element={<Signup />} />
     </Route>
   )
 );
