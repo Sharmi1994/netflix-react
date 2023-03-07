@@ -1,10 +1,28 @@
 import React, { useState } from "react";
+
 import Footer from "./footer";
+
+import axios from 'axios';
 
 function Signup() {
   const [click, setClick] = useState(false);
   function openDiv() {
     setClick(!click);
+  }
+  const [fname, setfname] = useState("");
+  const [lname, setlname] = useState("");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    try {
+        const response = await axios.post("/Signup", { fname, lname });
+        console.log(response.data);
+        setfname('');
+        setlname('');
+      } catch (error) {
+        console.log(error);
+      }
   }
   return (
     <React.Fragment>
@@ -17,21 +35,49 @@ function Signup() {
           <div className="row">
             <h2 className="signhead">Sign up</h2>
           </div>
-          <div className="row email ">
-            <input type="name" placeholder="First Name" size="20" />
+          <form onSubmit={handleSubmit}>
+            <div className="row email ">
+              <input
+                type="fname"
+                value={fname}
+                onChange={(event) => {
+                  setfname(event.target.value);
+                }}
+                placeholder="First Name"
+                size="20"
+              />
 
-            <input type="name" placeholder="Last Name" size="20" />
-            <input type="Emailaddress" placeholder="Email address" size="20" />
-          </div>
-          <div className="row email ">
-            <input type="password" placeholder="Enter Password" size="40" />
-          </div>
-          <div className="row email ">
-            <input type="password" placeholder="Re enter password" size="40" />
-          </div>
-          <div className="row email">
-            <button className="btn-lg btn-danger">Sign up</button>
-          </div>
+              <input
+                type="lname"
+                value={lname}
+                onChange={(event) => {
+                  setlname(event.target.value);
+                }}
+                placeholder="Last Name"
+                size="20"
+              />
+              <input
+                type="Emailaddress"
+                placeholder="Email address"
+                size="20"
+              />
+            </div>
+            <div className="row email ">
+              <input type="password" placeholder="Enter Password" size="40" />
+            </div>
+            <div className="row email ">
+              <input
+                type="password"
+                placeholder="Re enter password"
+                size="40"
+              />
+            </div>
+            <div className="row email">
+              <button type="submit" className="btn-lg btn-danger">
+                Sign up
+              </button>
+            </div>
+          </form>
           <div className="row email">
             <div className="col">
               {" "}
@@ -45,10 +91,6 @@ function Signup() {
           </div>
 
           <div className="row newto">
-            <p>New to Netflix?</p>
-            <a className="sun" href="">
-              Sign up now
-            </a>
             <p className="googlecap">
               This page is protected by Google reCAPTCHA to ensure you're not a
               bot.
