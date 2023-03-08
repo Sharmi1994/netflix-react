@@ -1,22 +1,41 @@
-const express = require('express');
-const router = express.Router();
-const MongoClient = require('mongodb').MongoClient;
+const express = require ("express");
+require("dotenv").config();
+const app= express();
 
-router.post('/Signup', async (req, res) => {
-  const { fname,lname } = req.body;
+const bodyParser=require ("body-parser");
+const {MongoClient}=require("mongodb");
+const cors = require('cors');
+const corsOptions ={
+    origin:'http://localhost:3002', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
-  console.log(req.body);
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.json());
 
-  const uri = 'mongodb+srv://sharmi:sharmi@cluster0.ewiwycg.mongodb.net/NetflixDB';
-  const client = new MongoClient(uri);
 
-  try {
+
+
+app.get("/",function(req,res){
+    res.send("Hello world");
+})
+
+app.post("/", async function(req,res){
+
+   const {fname,lname}=req.body; 
+    //connected to mongoDB
+const uri = process.env.MongoURI;
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+try {
+ 
     await client.connect();
- console.log("connected to the server successfully");
-    const database = client.db('NetflixDB');
-    const collection = database.collection('samplecollection');
 
-    const result = await collection.insertOne({ fname,lname });
+    const database = client.db('NetflixDB');
+    const collection = database.collection('customers');
+   
+    const result = await collection.insertOne({ fname, lname });
     res.json(result);
   } catch (error) {
     console.log(error);
@@ -24,6 +43,8 @@ router.post('/Signup', async (req, res) => {
   } finally {
     await client.close();
   }
-});
+})
 
-module.exports = router;
+app.listen(8082,function(){
+    console.log("server up and running in 8082");
+})

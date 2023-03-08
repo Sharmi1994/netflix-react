@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Footer from "./footer";
 
-import axios from 'axios';
+import axios from "axios";
 
 function Signup() {
   const [click, setClick] = useState(false);
@@ -11,19 +11,21 @@ function Signup() {
   }
   const [fname, setfname] = useState("");
   const [lname, setlname] = useState("");
-
-  async function handleSubmit(event) {
+  const handleSubmit = async function (event) {
     event.preventDefault();
-
     try {
-        const response = await axios.post("/Signup", { fname, lname });
-        console.log(response.data);
-        setfname('');
-        setlname('');
-      } catch (error) {
-        console.log(error);
-      }
-  }
+      const response = await axios.post("http://localhost:8082", {
+        fname,
+        lname,
+      });
+      console.log(response.data);
+      setfname("");
+      setlname("");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <React.Fragment>
       <div className="signin">
@@ -38,9 +40,9 @@ function Signup() {
           <form onSubmit={handleSubmit}>
             <div className="row email ">
               <input
-                type="fname"
+                type="text"
                 value={fname}
-                onChange={(event) => {
+                onChange={function (event) {
                   setfname(event.target.value);
                 }}
                 placeholder="First Name"
@@ -48,9 +50,9 @@ function Signup() {
               />
 
               <input
-                type="lname"
+                type="text"
                 value={lname}
-                onChange={(event) => {
+                onChange={function (event) {
                   setlname(event.target.value);
                 }}
                 placeholder="Last Name"
