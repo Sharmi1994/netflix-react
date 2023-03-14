@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 
+import { useLocation } from "react-router-dom";
+
 import Footer from "./footer";
 
 import axios from "axios";
 
 
 export default function Signup() {
+  const location = useLocation();
+  const EmailID = location.state?.email;
+
   const [click, setClick] = useState(false);
   function openDiv() {
     setClick(!click);
@@ -18,6 +23,8 @@ export default function Signup() {
 
   const handleSubmit = async function (event) {
     event.preventDefault();
+    setEmailAddress(EmailID);
+
 
     if (Password1 !== Password2) {
       alert('Password Incorrect');
@@ -27,11 +34,12 @@ export default function Signup() {
           fname,
           lname,
           Password2,
+          Emailaddress:EmailID
         });
         console.log(response.data);
         setfname("");
         setlname("");
-        setEmailAddress("");
+ 
         setPassword1("");
       } catch (err) {
         console.log(err);
@@ -54,7 +62,7 @@ export default function Signup() {
             <input
               type="email"
               required
-              value={Emailaddress}
+              value={EmailID}
               placeholder="Email Address"
               size="20"
               readOnly

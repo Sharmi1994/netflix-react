@@ -22,19 +22,20 @@ app.get("/", function (req, res) {
 function validateJson(fname, lname) {
   if (!fname || typeof fname !== "string") {
     return {
-      isValid: false,
-      message: "fname is incorrect",
+      isValidate: false,
+      message: "incorrect fname",
     };
   }
   if (!lname || typeof lname !== "string") {
     return {
-      isValid: false,
-      message: "lname is incorrect",
+      isValidate: false,
+      message: "incorrect lname",
     };
   }
+  return { isValidate: true };
 }
 
-async function insertIntoDb(fname, lname, Password2) {
+async function insertIntoDb(fname, lname, Password2, Emailaddress) {
   const uri = process.env.MongoURI;
   const client = new MongoClient(uri, {
     useNewUrlParser: true,
@@ -47,10 +48,11 @@ async function insertIntoDb(fname, lname, Password2) {
 
     const database = client.db("NetflixDB");
     const collection = database.collection("customers");
-    const result = await collection.insertOne({ fname, lname, Password2 });
+    const result = await collection.insertOne({ fname, lname, Password2, Emailaddress });
+
     return {
       inserted: true,
-      result,
+      result: result,
     };
   } catch (error) {
     console.log(error);
@@ -64,22 +66,27 @@ async function insertIntoDb(fname, lname, Password2) {
 }
 
 app.post("/", async function (req, res) {
-  const { fname, lname, Password2 } = req.body;
+  const { fname, lname, Password2, Emailaddress } = req.body;
 
   try {
-    const validate = validateJson(fname, lname);
-    if (validate.isValid) {
-      const insertop = await insertIntoDb(fname, lname, Password2);
-      if (insertop.inserted) {
-        res.json(insertop.result);
-      } else {
-        res.status(500).send(insertop.error);
-      }
+    const { isValidate, message } = validateJson(fname, lname);
+    if (!isValidate) {
+      res.json(message);
     } else {
-      res.send(validate.message);
+      const { inserted, error, result } = await insertIntoDb(
+        fname,
+        lname,
+        Password2,
+        Emailaddress
+      );
+      if (!inserted) {
+        res.send(error);
+      } else {
+        res.json(result);
+      }
     }
   } catch (error) {
-    console.error(error.message);
+    console.log(error);
   }
 });
 

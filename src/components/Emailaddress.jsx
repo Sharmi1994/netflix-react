@@ -4,17 +4,15 @@ import { useNavigate } from "react-router-dom";
 import Inputinemail from "./Inputinemail.jsx";
 
 function Emailaddress() {
+  const [email, setEmail] = useState("");
   let navigate = useNavigate();
   function routeChange() {
-    let path = "/Signup";
-    navigate(path);
+    navigate("/Signup", { state: { email:email} });
   }
-  const [email, setEmail] = useState("");
 
   function handleInput(inputValues) {
     setEmail(inputValues);
 
-    console.log(email);
   }
 
   return (
