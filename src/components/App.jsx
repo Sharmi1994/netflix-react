@@ -46,7 +46,7 @@ function App() {
       {details.map(detailsImport)}
       <h1 className="FAQ">Frequently Asked Questions</h1>
       {Faq.map(freqquesdetail)}
-      <Emailaddress />
+      <Emailaddress  />
       <hr />
      <Footer/>
  

@@ -4,25 +4,38 @@ import Footer from "./footer";
 
 import axios from "axios";
 
-function Signup() {
+
+export default function Signup() {
   const [click, setClick] = useState(false);
   function openDiv() {
     setClick(!click);
   }
   const [fname, setfname] = useState("");
   const [lname, setlname] = useState("");
+  const [Emailaddress, setEmailAddress] = useState("");
+  const [Password1, setPassword1] = useState("");
+  const [Password2, setPassword2] = useState("");
+
   const handleSubmit = async function (event) {
     event.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:8082", {
-        fname,
-        lname,
-      });
-      console.log(response.data);
-      setfname("");
-      setlname("");
-    } catch (err) {
-      console.log(err);
+
+    if (Password1 !== Password2) {
+      alert('Password Incorrect');
+    } else {
+      try {
+        const response = await axios.post("http://localhost:8082", {
+          fname,
+          lname,
+          Password2,
+        });
+        console.log(response.data);
+        setfname("");
+        setlname("");
+        setEmailAddress("");
+        setPassword1("");
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
@@ -38,9 +51,19 @@ function Signup() {
             <h2 className="signhead">Sign up</h2>
           </div>
           <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              required
+              value={Emailaddress}
+              placeholder="Email Address"
+              size="20"
+              readOnly
+            />
+
             <div className="row email ">
               <input
                 type="text"
+                required
                 value={fname}
                 onChange={function (event) {
                   setfname(event.target.value);
@@ -51,6 +74,7 @@ function Signup() {
 
               <input
                 type="text"
+                required
                 value={lname}
                 onChange={function (event) {
                   setlname(event.target.value);
@@ -58,24 +82,35 @@ function Signup() {
                 placeholder="Last Name"
                 size="20"
               />
-              <input
-                type="Emailaddress"
-                placeholder="Email address"
-                size="20"
-              />
-            </div>
-            <div className="row email ">
-              <input type="password" placeholder="Enter Password" size="40" />
             </div>
             <div className="row email ">
               <input
                 type="password"
+                id="Password1"
+                value={Password1}
+                onChange={(event) => {
+                  setPassword1(event.target.value);
+                }}
+                required
+                placeholder="Enter Password"
+                size="40"
+              />
+            </div>
+            <div className="row email ">
+              <input
+                type="password"
+                id="password2"
+                required
+                value={Password2}
+                onChange={(event) => {
+                  setPassword2(event.target.value);
+                }}
                 placeholder="Re enter password"
                 size="40"
               />
             </div>
             <div className="row email">
-              <button type="submit" className="btn-lg btn-danger">
+              <button type="submit"  className="btn-lg btn-danger">
                 Sign up
               </button>
             </div>
@@ -123,5 +158,3 @@ function Signup() {
     </React.Fragment>
   );
 }
-
-export default Signup;

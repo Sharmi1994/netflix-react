@@ -30,7 +30,7 @@ function Navbar() {
       <div className="container customisedcontain">
         <h1 className="subtitle">Unlimited movies, TV shows, and more.</h1>
         <h2 className="subsentence1">Watch anywhere. Cancel anytime..</h2>
-       <Emailaddress/>
+       <Emailaddress />
       
       </div>
    
